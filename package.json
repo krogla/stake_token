@@ -1,0 +1,22 @@
+{
+  "name": "token",
+  "version": "1.0.0",
+  "description": "Upgradable ERC20 token with Stake and AirDrop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["erc20", "token", "airdrop", "stake", "upgradable", "ethereum"],
+  "author": "KRogLA <i@krogla.me> (https://github.com/krogla)",
+  "license": "CC BY-NC-ND 4.0",
+  "dependencies": {
+    "@openzeppelin/contract-loader": "^0.6.1",
+    "@openzeppelin/contracts-ethereum-package": "^2.5.0",
+    "@openzeppelin/upgrades": "^2.8.0",
+    "web3": "^1.2.6"
+  },
+  "devDependencies": {
+    "@openzeppelin/cli": "^2.8.2",
+    "@openzeppelin/test-environment": "^0.1.4"
+  }
+}
