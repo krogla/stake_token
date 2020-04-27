@@ -12,10 +12,10 @@ contract ERC20Stakes is Initializable, ERC20 {
     using SafeMath for uint256;
 
     // TODO change to real
-    uint256 constant _holdPeriod = 2 minutes; // 21 days;
-    uint256 constant _annualPercent = 12; // 12%
-    uint256 constant _basePeriod = 30 seconds; //1 days
-    uint256 constant _annualPeriod = 100 * 10 minutes; // 100 * 365 days
+    uint256 private _holdPeriod; // = 2 minutes; // 21 days;
+    uint256 private _annualPercent; // = 12; // 12%
+    uint256 private _basePeriod; // = 30 seconds; //1 days
+    uint256 private _annualPeriod; // = 100 * 10 minutes; // 100 * 365 days
 
     struct Stake {
         uint256 amount;
@@ -51,6 +51,30 @@ contract ERC20Stakes is Initializable, ERC20 {
         _;
     }
 
+    function initialize(uint256 basePeriod, uint256 holdPeriod, uint256 annualPercent, uint256 annualPeriod) public initializer {
+        _stakeParams(basePeriod, holdPeriod, annualPercent, annualPeriod);
+    }
+
+
+    function _stakeParams(uint256 basePeriod, uint256 holdPeriod, uint256 annualPercent, uint256 annualPeriod) internal {
+        _holdPeriod = holdPeriod;
+        _annualPercent = annualPercent;
+        _basePeriod = basePeriod;
+        _annualPeriod = annualPeriod.mul(100);
+    }
+
+    function basePeriod() external view returns (uint256) {
+        return _basePeriod;
+    }
+    function holdPeriod() external view returns (uint256) {
+        return _holdPeriod;
+    }
+    function annualPercent() external view returns (uint256) {
+        return _annualPercent;
+    }
+    function annualPeriod() external view returns (uint256) {
+        return _annualPeriod / 100;
+    }
 
     /**
    * @dev A method for a stakeholder to create a stake
@@ -114,7 +138,11 @@ contract ERC20Stakes is Initializable, ERC20 {
      * @return uint256 The amount of wei staked.
      */
     function stakeOf(address stakeholder) public view returns (uint256){
-        return _stakes[stakeholder];
+        return _stakes[stakeholder].amount;
+    }
+
+    function stakeDetails(address stakeholder) public view returns (uint256, uint256){
+        return (_stakes[stakeholder].stakedAt, _stakes[stakeholder].heldAt);
     }
 
     function rewardOf(address stakeholder) public view returns(uint256) {
@@ -127,10 +155,6 @@ contract ERC20Stakes is Initializable, ERC20 {
         uint256 period = ((rewardedAt - _stakes[stakeholder].stakedAt) / _basePeriod) * _basePeriod;
         // reward for period according annual percent value
         return _stakes[stakeholder].amount.mul(period).mul(_annualPercent) / _annualPeriod;
-    }
-
-    function stakeDetails(address stakeholder) public view returns (uint256, uint256){
-        return (_stakes[stakeholder].stakedAt, _stakes[stakeholder].heldAt);
     }
 
     /**
