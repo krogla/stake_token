@@ -1,0 +1,6 @@
+node_modules
+.env
+# OpenZeppelin
+#build/contracts
+.openzeppelin/dev-*.json
+.openzeppelin/.session

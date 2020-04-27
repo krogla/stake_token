@@ -1,22 +1,41 @@
 {
   "name": "token",
+  "author": "KRogLA <i@krogla.me> (https://github.com/krogla)",
+  "license": "CC BY-NC-ND 4.0",
   "version": "1.0.0",
   "description": "Upgradable ERC20 token with Stake and AirDrop",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "ganache": "ganache-cli --deterministic",
+    "test": "oz compile && mocha --exit --recursive"
   },
-  "keywords": ["erc20", "token", "airdrop", "stake", "upgradable", "ethereum"],
-  "author": "KRogLA <i@krogla.me> (https://github.com/krogla)",
-  "license": "CC BY-NC-ND 4.0",
+  "keywords": [
+    "erc20",
+    "token",
+    "airdrop",
+    "stake",
+    "upgradable",
+    "ethereum"
+  ],
+  "files": [
+    "build",
+    "contracts",
+    ".openzeppelin/*.json"
+  ],
   "dependencies": {
     "@openzeppelin/contract-loader": "^0.6.1",
     "@openzeppelin/contracts-ethereum-package": "^2.5.0",
     "@openzeppelin/upgrades": "^2.8.0",
-    "web3": "^1.2.6"
+    "web3": "^1.2.7"
   },
   "devDependencies": {
     "@openzeppelin/cli": "^2.8.2",
-    "@openzeppelin/test-environment": "^0.1.4"
+    "@openzeppelin/test-environment": "^0.1.4",
+    "@openzeppelin/test-helpers": "^0.5.5",
+    "@truffle/hdwallet-provider": "^1.0.34",
+    "chai": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "ganache-cli": "^6.9.1",
+    "mocha": "^7.1.2"
   }
 }

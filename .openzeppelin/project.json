@@ -1,15 +1,14 @@
 {
   "manifestVersion": "2.2",
   "contracts": {
-    "Box": "Box"
+    "Token": "Token"
   },
-  "dependencies": {},
   "name": "token",
   "version": "1.0.0",
   "compiler": {
     "compilerSettings": {
       "optimizer": {
-        "enabled": false,
+        "enabled": true,
         "runs": "200"
       }
     },
@@ -17,9 +16,10 @@
       "enabled": false
     },
     "manager": "openzeppelin",
-    "solcVersion": "0.6.6",
+    "solcVersion": "0.5.17",
     "artifactsDir": "build/contracts",
     "contractsDir": "contracts"
   },
-  "telemetryOptIn": false
+  "telemetryOptIn": false,
+  "dependencies": {}
 }
