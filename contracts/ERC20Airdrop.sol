@@ -4,10 +4,6 @@ import "@openzeppelin/upgrades/contracts/Initializable.sol";
 import "@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol";
 
-/**
- * @dev Extension of {ERC20} that implements a basic ERC20 staking
- * with incentive distribution.
- */
 contract ERC20Airdrop is Initializable, ERC20 {
     using SafeMath for uint256;
 
@@ -20,5 +16,6 @@ contract ERC20Airdrop is Initializable, ERC20 {
             _transfer(sender, recipients[i], amount);
         }
     }
+
     uint256[50] private ______gap;
 }

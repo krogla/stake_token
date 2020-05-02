@@ -24,7 +24,7 @@ contract Token is Initializable, Ownable, ERC20Airdrop, ERC20Stakes, ERC20Detail
 //        uint256 constant _holdPeriod = 21 days;
 //        uint256 constant _annualPercent = 12; // 12%
 //        uint256 constant _basePeriod = 1 days;
-//        uint256 constant _annualPeriod = 100 * 365 days; // mul 100 to help percent calculation
+//        uint256 constant _annualPeriod = 365 days;
         ERC20Stakes.initialize(stakeBasePeriod, stakeHoldPeriod, stakeAnnualPercent, stakeAnnualPeriod);
 
     }
