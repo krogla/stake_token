@@ -90,7 +90,7 @@ In addition:
 ### airdrop
  - fill `recipients.txt` with address list (one address per line, line with incorrect address will be ignored)
  - ensure you have enough ETH ant token balance on the owner account (or account which index in specified `.env`)
- - run `npm airdrop-rinkeby` or `npm airdrop-mainnet` to perform airdrop
+ - run `npm run airdrop-rinkeby` or `npm run airdrop-mainnet` to perform airdrop
  > **NOTE:** airdrop was test with ~900 addresses in list per one transaction, it takes about 6M of gas [see tx](https://rinkeby.etherscan.io/tx/0x280d50a16d20527306cf042b1eecff4100df425ebab27f056bb4c38208bed4e0)    
  
 ## run local tests
