@@ -686,10 +686,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1964,
-                        1965
+                        2003,
+                        2004
                       ],
-                      "referencedDeclaration": 1965,
+                      "referencedDeclaration": 2004,
                       "src": "1155:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1385,10 +1385,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1964,
-                        1965
+                        2003,
+                        2004
                       ],
-                      "referencedDeclaration": 1965,
+                      "referencedDeclaration": 2004,
                       "src": "2305:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",

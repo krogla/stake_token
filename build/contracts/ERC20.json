@@ -2832,10 +2832,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1964,
-                        1965
+                        2003,
+                        2004
                       ],
-                      "referencedDeclaration": 1965,
+                      "referencedDeclaration": 2004,
                       "src": "5394:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2986,10 +2986,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1964,
-                        1965
+                        2003,
+                        2004
                       ],
-                      "referencedDeclaration": 1965,
+                      "referencedDeclaration": 2004,
                       "src": "5474:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -3668,10 +3668,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1964,
-                        1965
+                        2003,
+                        2004
                       ],
-                      "referencedDeclaration": 1965,
+                      "referencedDeclaration": 2004,
                       "src": "6106:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -4290,10 +4290,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1964,
-                        1965
+                        2003,
+                        2004
                       ],
-                      "referencedDeclaration": 1965,
+                      "referencedDeclaration": 2004,
                       "src": "6727:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -4934,10 +4934,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1964,
-                        1965
+                        2003,
+                        2004
                       ],
-                      "referencedDeclaration": 1965,
+                      "referencedDeclaration": 2004,
                       "src": "7512:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -5088,10 +5088,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1964,
-                        1965
+                        2003,
+                        2004
                       ],
-                      "referencedDeclaration": 1965,
+                      "referencedDeclaration": 2004,
                       "src": "7590:7:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",

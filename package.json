@@ -6,6 +6,9 @@
   "description": "Upgradable ERC20 token with Stake and AirDrop",
   "main": "index.js",
   "scripts": {
+    "airdrop": "node ./airdrop.js",
+    "airdrop-rinkeby": "node ./airdrop.js rinkeby",
+    "airdrop-mainnet": "node ./airdrop.js mainnet",
     "ganache": "ganache-cli --deterministic",
     "test": "oz compile && mocha --exit --recursive"
   },
@@ -13,6 +16,7 @@
     "erc20",
     "token",
     "airdrop",
+    "staking",
     "stake",
     "upgradable",
     "ethereum"
@@ -26,6 +30,7 @@
     "@openzeppelin/contract-loader": "^0.6.1",
     "@openzeppelin/contracts-ethereum-package": "^2.5.0",
     "@openzeppelin/upgrades": "^2.8.0",
+    "dotenv": "^8.2.0",
     "web3": "^1.2.7"
   },
   "devDependencies": {
@@ -34,7 +39,6 @@
     "@openzeppelin/test-helpers": "^0.5.5",
     "@truffle/hdwallet-provider": "^1.0.34",
     "chai": "^4.2.0",
-    "dotenv": "^8.2.0",
     "ganache-cli": "^6.9.1",
     "mocha": "^7.1.2"
   }

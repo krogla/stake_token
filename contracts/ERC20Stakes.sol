@@ -17,6 +17,10 @@ contract ERC20Stakes is Initializable, ERC20 {
     uint256 private _basePeriod; // = 30 seconds; //1 days
     uint256 private _annualPeriod; // = 100 * 10 minutes; // 100 * 365 days
 
+    event StakeCreate(address indexed stakeholder, uint256 stake);
+    event StakeHold(address indexed stakeholder);
+    event StakeWithdraw(address indexed stakeholder, uint256 reward);
+
     struct Stake {
         uint256 amount;
         uint256 stakedAt;
@@ -46,7 +50,7 @@ contract ERC20Stakes is Initializable, ERC20 {
     }
 
     modifier onlyStakeUnheld(address stakeholder) {
-        require(_stakes[stakeholder].heldAt > _stakes[stakeholder].stakedAt, "Stake: stake not canceled");
+        require(_stakes[stakeholder].heldAt > _stakes[stakeholder].stakedAt, "Stake: stake not exists or not canceled");
         require(_stakes[stakeholder].heldAt + _holdPeriod <= now, "Stake: stake on hold");
         _;
     }
@@ -110,6 +114,8 @@ contract ERC20Stakes is Initializable, ERC20 {
             heldAt : 0
             });
         _addStakeholder(stakeholder);
+        emit StakeCreate(stakeholder,  stake);
+
     }
 
     /**
@@ -118,6 +124,7 @@ contract ERC20Stakes is Initializable, ERC20 {
      */
     function _holdStake(address stakeholder) internal onlyStakeExists(stakeholder) {
         _stakes[stakeholder].heldAt = now;
+        emit StakeHold(stakeholder);
     }
 
     /**
@@ -130,6 +137,7 @@ contract ERC20Stakes is Initializable, ERC20 {
         delete _stakes[stakeholder];
         _removeStakeholder(stakeholder);
         _mint(stakeholder, stake.add(reward));
+        emit StakeWithdraw(stakeholder, reward);
     }
 
     /**

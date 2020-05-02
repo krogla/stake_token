@@ -11,42 +11,23 @@ import "./ERC20Airdrop.sol";
 contract Token is Initializable, Ownable, ERC20Airdrop, ERC20Stakes, ERC20Detailed, ERC20Mintable {
 
     function initialize(string memory name, string memory symbol, uint8 decimals, uint256 initialSupply, address initialHolder,
-        uint256 basePeriod, uint256 holdPeriod, uint256 annualPercent, uint256 annualPeriod) public initializer {
+        uint256 stakeBasePeriod, uint256 stakeHoldPeriod, uint256 stakeAnnualPercent, uint256 stakeAnnualPeriod) public initializer {
         Ownable.initialize(initialHolder);
         ERC20Detailed.initialize(name, symbol, decimals);
         // Mint the initial supply
-        _mint(initialHolder, initialSupply * 10 ** uint256(decimals));
+        _mint(initialHolder, initialSupply); // * 10 ** uint256(decimals)
 
         // Initialize the minter roles, and renounce them
         ERC20Mintable.initialize(initialHolder);
 
 
-        //        uint256 constant _holdPeriod = 2 minutes; // 21 days;
-        //        uint256 constant _annualPercent = 12; // 12%
-        //        uint256 constant _basePeriod = 30 seconds; //1 days
-        //        uint256 constant _annualPeriod = 100 * 10 minutes; // 100 * 365 days
-        ERC20Stakes.initialize(basePeriod, holdPeriod, annualPercent, annualPeriod);
+//        uint256 constant _holdPeriod = 21 days;
+//        uint256 constant _annualPercent = 12; // 12%
+//        uint256 constant _basePeriod = 1 days;
+//        uint256 constant _annualPeriod = 100 * 365 days; // mul 100 to help percent calculation
+        ERC20Stakes.initialize(stakeBasePeriod, stakeHoldPeriod, stakeAnnualPercent, stakeAnnualPeriod);
 
     }
-
-//    function initialize(string memory name, string memory symbol) public initializer {
-//        Ownable.initialize(msg.sender);
-//        ERC20Detailed.initialize(name, symbol, 18);
-//        // Mint the initial supply
-//        _mint(msg.sender, 500 * 10 ** 18);
-//
-//        // Initialize the minter roles, and renounce them
-//        ERC20Mintable.initialize(msg.sender);
-//
-//
-//        //        uint256 constant _basePeriod = 30 seconds; //1 days
-//        //        uint256 constant _holdPeriod = 2 minutes; // 21 days;
-//        //        uint256 constant _annualPercent = 12; // 12%
-//        //        uint256 constant _annualPeriod = 100 * 10 minutes; // 100 * 365 days
-////        ERC20Stakes.initialize(basePeriod, holdPeriod, annualPercent, annualPeriod);
-//        ERC20Stakes.initialize(30 seconds, 2 minutes, 12, 100 * 10 minutes);
-//
-//    }
 
     /**
     * @dev non payable default function
@@ -63,9 +44,9 @@ contract Token is Initializable, Ownable, ERC20Airdrop, ERC20Stakes, ERC20Detail
         return true;
     }
 
-
-
-
+    function stakeParams(uint256 basePeriod, uint256 holdPeriod, uint256 annualPercent, uint256 annualPeriod) external onlyOwner {
+        _stakeParams(basePeriod, holdPeriod, annualPercent, annualPeriod);
+    }
 
     uint256[50] private ______gap;
 }
