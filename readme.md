@@ -14,7 +14,7 @@ Deployed in [Rinkeby testnet](https://rinkeby.etherscan.io/address/0x265453b7f7d
 
 ##### Ensure that you have:
  - installed `nodejs` v.10 or v.12
- - ensure `node` & `npm` console commands are works
+ - ensure `node`, `npm` and `npx` console commands are works
 
 ##### Install dependencies:
  - `npm install`
@@ -39,8 +39,8 @@ Deployed in [Rinkeby testnet](https://rinkeby.etherscan.io/address/0x265453b7f7d
  - symbol
  - decimals (`18` is max and thus good choice)
  - initial supply (integer amount according to decimals, i.e. for __555 tokens__ with __decimals=18__, it will be __555000000000000000000__)
- - initial holder (address of token owner, initial supply wil be transferred here)
-   > **NOTE:** for best experience put here default (first) address generated from mnemonic, i.e with index 0
+ - initial holder (address of token owner, initial supply will be transferred here)
+   > **NOTE:** for best experience put here default (first) address generated from mnemonic, i.e. with index 0
  - stake base period - minimal period for reward calculation, in seconds (1 day = 86400)
  - stake hold period - period of stake hold after canceling, reward can be taken only after, in seconds (21 days = 1814400)
  - stake annual percent - reward percent per annual period, integer ( 12 )
@@ -49,21 +49,21 @@ Deployed in [Rinkeby testnet](https://rinkeby.etherscan.io/address/0x265453b7f7d
 ## deploy
  - run `npx oz deploy`
  - on next step with arrows keys choose **upgradeable**
- - next pick network **rinkeby** or **mainnet**
+ - next pick network **rinkeby** (or **mainnet**)
  - next choose contract **Token**
  - on question 'Call a function to initialize the instance after creating it?' answer **Y**
  - next select **initialize** function with most parameters
    ![](img1.png?raw=true)
  - next follow wizard to fill Token parameters:
-   - name (__Some token__)
-   - symbol (__TKN__)
-   - initialSupply (__555000000000000000000__)
-   - initialHolder (__0xD9dC8E5b333a89d4A7e435faD1E53f62E80309Fd__) 
+   - name (e.g. __Some token__)
+   - symbol (e.g. __TKN__)
+   - initialSupply (e.g. __555000000000000000000__)
+   - initialHolder (e.g. __0xD9dC8E5b333a89d4A7e435faD1E53f62E80309Fd__) 
      > **NOTE:** Initial holder WILL BE OWNER of Token, i.e. can do mint/burn
-   - stakeBasePeriod (__86400__)
-   - stakeHoldPeriod (__1814400__)
-   - stakeAnnualPercent (__12__)
-   - stakeAnnualPeriod (__31536000__)
+   - stakeBasePeriod (e.g. __86400__)
+   - stakeHoldPeriod (e.g. __1814400__)
+   - stakeAnnualPercent (e.g. __12__)
+   - stakeAnnualPeriod (e.g. __31536000__)
  
 
 ## usage

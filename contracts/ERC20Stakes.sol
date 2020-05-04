@@ -67,16 +67,16 @@ contract ERC20Stakes is Initializable, ERC20 {
         _annualPeriod = annualPeriod.mul(100);
     }
 
-    function basePeriod() external view returns (uint256) {
+    function stakeBasePeriod() external view returns (uint256) {
         return _basePeriod;
     }
-    function holdPeriod() external view returns (uint256) {
+    function stakeHoldPeriod() external view returns (uint256) {
         return _holdPeriod;
     }
-    function annualPercent() external view returns (uint256) {
+    function stakeAnnualPercent() external view returns (uint256) {
         return _annualPercent;
     }
-    function annualPeriod() external view returns (uint256) {
+    function stakeAnnualPeriod() external view returns (uint256) {
         return _annualPeriod / 100;
     }
 
