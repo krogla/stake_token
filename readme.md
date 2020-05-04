@@ -52,7 +52,7 @@ Deployed in [Rinkeby testnet](https://rinkeby.etherscan.io/address/0x265453b7f7d
  - next pick network **rinkeby** or **mainnet**
  - next choose contract **Token**
  - on question 'Call a function to initialize the instance after creating it?' answer **Y**
- - next select *initialize* function with most parameters
+ - next select **initialize** function with most parameters
    ![](img1.png?raw=true)
  - next follow wizard to fill Token parameters:
    - name (__Some token__)
@@ -71,8 +71,9 @@ Deployed in [Rinkeby testnet](https://rinkeby.etherscan.io/address/0x265453b7f7d
 Token supports all ERC20 standard functions.
  
 In addition:
+ - `mint(address account, uint256 amount)` - owner can mint some amount for specified account
  - `burn(address account, uint256 amount)` - owner can burn some amount from specified account
- - `airdrop(uint256 amount, address [] calldata recipients)` - sends a specified amount for each address in list, function caller must have enough token balance
+ - `airdrop(uint256 amount, address [] calldata recipients)` - transfer a specified amount to each address in list, function caller must have enough token balance
  - `stakeParams(uint256 basePeriod, uint256 holdPeriod, uint256 annualPercent, uint256 annualPeriod)` - owner can change stake parameters
  - `createStake(uint256 stake)` - create the stake for caller, caller must have enough token balance
  - `cancelStake()` - cancel the stake for caller and hold staked amount 
